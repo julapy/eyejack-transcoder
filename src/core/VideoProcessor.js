@@ -508,6 +508,13 @@ class VideoProcessor {
       try {
         await ffmpeg.exec(args);
       } catch (execError) {
+        // cancel() terminates the worker mid-exec, which surfaces here as an
+        // exec failure. That's an expected user action, not an error — re-throw
+        // the standard cancellation sentinel quietly (no console noise) so
+        // callers and the app's global handlers treat it as a clean cancel.
+        if (this.cancelled) {
+          throw new Error('cancelled!');
+        }
         console.error('[VideoProcessor] FFmpeg exec failed:', execError);
         throw new Error(`FFmpeg execution failed: ${execError?.message || execError || 'Unknown error'}`);
       }
