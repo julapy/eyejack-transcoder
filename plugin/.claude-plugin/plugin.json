@@ -1,0 +1,16 @@
+{
+  "name": "eyejack-transcoder",
+  "description": "Transparent (alpha) video for the web. Convert video, GIFs, and image sequences into compact, WebGL-ready H.264/MP4 — including alpha video that plays across browsers. Includes a skill and the @eyejack/transcoder-mcp tool.",
+  "version": "0.1.0",
+  "author": {
+    "name": "EyeJack",
+    "url": "https://eyejack.io"
+  },
+  "homepage": "https://transcoder.eyejack.io",
+  "mcpServers": {
+    "eyejack-transcoder": {
+      "command": "npx",
+      "args": ["-y", "@eyejack/transcoder-mcp"]
+    }
+  }
+}

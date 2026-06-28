@@ -1,0 +1,14 @@
+{
+  "name": "eyejack-transcoder",
+  "owner": {
+    "name": "EyeJack",
+    "url": "https://eyejack.io"
+  },
+  "plugins": [
+    {
+      "name": "eyejack-transcoder",
+      "source": "./plugin",
+      "description": "Transparent (alpha) video for the web — convert video, GIFs, and image sequences into WebGL-ready H.264/MP4. Bundles the transparent-video-for-web skill and the @eyejack/transcoder-mcp tool."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@eyejack/transcoder-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for EyeJack Transcoder — lets AI agents convert video, GIFs, and image sequences into WebGL-ready H.264/MP4 (including transparent alpha video) by driving the transcoder in a local headless browser. Files are processed locally, never uploaded.",
+  "license": "MIT",
+  "author": "EyeJack (https://eyejack.io)",
+  "homepage": "https://transcoder.eyejack.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julapy/eyejack-transcoder.git",
+    "directory": "mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/julapy/eyejack-transcoder/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "transcoder",
+    "alpha-video",
+    "transparent-video",
+    "ffmpeg",
+    "ffmpeg-wasm",
+    "webar",
+    "webgl",
+    "video",
+    "eyejack"
+  ],
+  "type": "module",
+  "bin": {
+    "transcoder-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "mcpName": "io.github.julapy/eyejack-transcoder",
+  "files": [
+    "dist",
+    "server.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "playwright": "^1.61.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}

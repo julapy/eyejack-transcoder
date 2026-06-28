@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.julapy/eyejack-transcoder",
+  "description": "Convert video, GIFs, and image sequences into WebGL-ready H.264/MP4 — including transparent (alpha) video — by driving the EyeJack Transcoder in a local headless browser. Files are processed locally, never uploaded.",
+  "repository": {
+    "url": "https://github.com/julapy/eyejack-transcoder",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@eyejack/transcoder-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" }
+    }
+  ]
+}
