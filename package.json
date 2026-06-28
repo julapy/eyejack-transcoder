@@ -1,8 +1,32 @@
 {
   "name": "@eyejack/transcoder",
   "version": "0.1.0",
+  "description": "Browser-based transcoder that turns video, GIFs, and image sequences into compact, WebGL-ready H.264/MP4 — including transparent (alpha) video. Runs entirely client-side via FFmpeg WASM.",
   "license": "MIT",
-  "private": true,
+  "author": "EyeJack (https://eyejack.io)",
+  "homepage": "https://transcoder.eyejack.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julapy/eyejack-transcoder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/julapy/eyejack-transcoder/issues"
+  },
+  "keywords": [
+    "webar",
+    "alpha-video",
+    "transparent-video",
+    "ffmpeg",
+    "ffmpeg-wasm",
+    "webgl",
+    "video-transcoding",
+    "h264",
+    "mp4",
+    "gif-to-video",
+    "image-sequence",
+    "browser",
+    "eyejack"
+  ],
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -15,12 +39,24 @@
     },
     "./ffmpeg-assets": "./public/ffmpeg"
   },
+  "files": [
+    "dist/index.js",
+    "dist/index.js.map",
+    "src",
+    "public/ffmpeg",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run -c vitest.config.ts",
     "test:watch": "vitest -c vitest.config.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@ffmpeg/ffmpeg": "^0.12.10",

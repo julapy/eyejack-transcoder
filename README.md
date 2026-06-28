@@ -111,6 +111,25 @@ Also on `window`: `transcodeSequence(frames, opts)`, `transcodeFixture(url, opts
 (fetch a URL, then transcode), and `transcoder.cancel()`. Every call returns a promise,
 so an agent can `await` it and read the result, probe, and log directly.
 
+### MCP server + Claude skill
+
+For agents that don't drive a browser themselves, the **[`@eyejack/transcoder-mcp`](./mcp)**
+server wraps this `window` API — it launches a local headless browser and exposes
+`transcode` / `transcode_sequence` / `probe` as MCP tools (files are processed locally,
+never uploaded):
+
+```jsonc
+{ "mcpServers": { "eyejack-transcoder": { "command": "npx", "args": ["-y", "@eyejack/transcoder-mcp"] } } }
+```
+
+This repo is also a Claude Code plugin marketplace that bundles the server plus a
+`transparent-video-for-web` skill:
+
+```
+/plugin marketplace add julapy/eyejack-transcoder
+/plugin install eyejack-transcoder@eyejack-transcoder
+```
+
 ---
 
 ## License
